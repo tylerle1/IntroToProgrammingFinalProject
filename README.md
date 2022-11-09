@@ -1,5 +1,5 @@
 # IntroToProgrammingFinalProject
-# Project Title
+# Hangman
 
 Simple overview of use/purpose.
 
