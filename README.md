@@ -1,28 +1,27 @@
 # IntroToProgrammingFinalProject
 # Hangman
 
-Simple overview of use/purpose.
+Make a fun hangman game 
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+A hangman game with random words. Guess letters and if you guess wrong you lose a life. Basically a normal hangman game. Use Bellarmine themed words. Try to make a hangman game in a window using pygame or anything.
 
 ## Getting Started
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Python 3.x, Pygame, etc.
+Python
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+Run game in visual studio code
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+Open python file and run
+Play in terminal
+
 ```
 code blocks for commands
 ```
@@ -38,8 +37,8 @@ command to run if program contains helper info
 
 Contributors names and contact info
 
-ex. Chris Cozort  
-ex. ccozort@bcp.org
+Tyler Le
+tyler.le25@bcp.org
 
 ## Version History
 
@@ -51,7 +50,7 @@ ex. ccozort@bcp.org
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
