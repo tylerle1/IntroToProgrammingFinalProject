@@ -5,13 +5,13 @@ Make a fun hangman game
 
 ## Description
 
-A hangman game with random words. Guess letters and if you guess wrong you lose a life. Basically a normal hangman game. Use Bellarmine themed words. Try to make a hangman game in a window using pygame or anything.
+A hangman game with random words. Guess letters and if you guess wrong you lose a life. Basically a normal hangman game. Use Bellarmine themed words. Use pygame to play hangman in a window
 
 ## Getting Started
 
 ### Dependencies
 
-Python
+Python, pygame
 
 ### Installing
 
@@ -20,7 +20,7 @@ Run game in visual studio code
 ### Executing program
 
 Open python file and run
-Play in terminal
+Play in pygame
 
 ```
 code blocks for commands
