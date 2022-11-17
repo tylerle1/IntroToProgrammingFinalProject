@@ -5,7 +5,8 @@ Make a fun hangman game
 
 ## Description
 
-A hangman game with random words. Guess letters and if you guess wrong you lose a life. Basically a normal hangman game. Use Bellarmine themed words. Use tkinter to play hangman in a window
+A hangman game with random words. Guess letters and if you guess wrong you lose a life. Basically a normal hangman game. Use Bellarmine themed words. Use pygame
+to play hangman in a window
 
 ## Getting Started
 
