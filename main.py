@@ -20,17 +20,19 @@ WHITE = (255,255,255)
 
 
 
-# load images
 
 # load hangman images
-pygame.image.load("hangman0.png")
-pygame.image.load("hangman1.png")
-pygame.image.load("hangman2.png")
-pygame.image.load("hangman3.png")
-pygame.image.load("hangman4.png")
-pygame.image.load("hangman5.png")
-pygame.image.load("hangman6.png")
+# make an images list
+images = []
+# create a loop that runs 7 times for each image
+for i in range(7):
+    # each time the loop runs it adds a string so we can load every image
+    image = pygame.image.load("C:\Github\IntrotoProgramming2022\IntroToProgrammingFinalProject\IntroToProgrammingFinalProject\images")
+    # "append" adds it
+    images.append(image)
 
+# game variables
+game_status = 0
 
 # initiate pygame and create a window
 pygame.init()
@@ -54,11 +56,17 @@ running = True
 # Game loop
 while running:
     clock.tick(FPS)
+
     screen.fill(WHITE)
+    # blit function goes into the images loop and selects the one based on the game status
+    screen.blit(images[game_status], (150, 100))
+    # updates the display
+    pygame.display.update()
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
         if event.type == pygame.MOUSEBUTTONDOWN:
             # checks the position of the mouse
             pos = pygame.mouse.get_pos()
