@@ -41,7 +41,13 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
 # create class for buttons with letters
 class Button:
-    def __init__(self, pos, width, height, text)
+    def __init__(self, pos, width, height, text):
+        self.x = pos
+        self.y = pos
+
+    def click():
+        pass
+
 
 # make clock
 clock = pygame.time.Clock()
