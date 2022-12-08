@@ -1,7 +1,10 @@
 # Hangman game using python
 
+# sources
+# https://www.youtube.com/watch?v=8SzTzvrWaAA&ab_channel=ClearCode
+
 # import libraries
-import pygame
+import pygame, sys
 import random
 
 
@@ -13,21 +16,18 @@ WIDTH = 800
 
 
 # colors
-BLACK = (0,0,0)
-WHITE = (255,255,255)
-
-
-
-
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+RED = (255, 0, 0)
 
 
 # load hangman images
-# make an images list
+# make images a list
 images = []
 # create a loop that runs 7 times for each image
 for i in range(7):
-    # each time the loop runs it adds a string so we can load every image
-    image = pygame.image.load("C:\Github\IntrotoProgramming2022\IntroToProgrammingFinalProject\IntroToProgrammingFinalProject\images")
+    # each time the loop runs it adds a number so we can load every image
+    image = pygame.image.load("hangman" + str(i) + ".png")
     # "append" adds it
     images.append(image)
 
@@ -40,13 +40,8 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
 
 # create class for buttons with letters
-class Buttons():
-    def __init__(self, x, y, width, height):
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
-
+class Button:
+    def __init__(self, pos, width, height, text)
 
 # make clock
 clock = pygame.time.Clock()
@@ -58,18 +53,18 @@ while running:
     clock.tick(FPS)
 
     screen.fill(WHITE)
+
+    # draw buttons
+    
     # blit function goes into the images loop and selects the one based on the game status
     screen.blit(images[game_status], (150, 100))
-    # updates the display
-    pygame.display.update()
 
+    # event handler
     for event in pygame.event.get():
+        # quit game
         if event.type == pygame.QUIT:
             running = False
-
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            # checks the position of the mouse
-            pos = pygame.mouse.get_pos()
-            print (pos)
+    # updates the display
+    pygame.display.update()
 
 pygame.quit()
