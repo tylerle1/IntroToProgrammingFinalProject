@@ -45,53 +45,28 @@ clock = pygame.time.Clock()
 # make font
 font = pygame.font.SysFont("Arial", 20)
 
+word = "APPLE"
 
 # create class for buttons with letters
 class Button:
-    def __init__(self, text, pos, font, background = "black", feedback=""):
+    def __init__(self, text, pos, font, background = "white", feedback=""):
+        self.char = text
         self.x, self.y = pos
         self.font = pygame.font.SysFont("Arial", font)
-        if feedback == "":
-            self.feedback = "text"
-        else:
-            self.feedback = feedback
         self.change_text(text, background)
+        self.feedback = feedback
  
-    def change_text(self, text, background= "black"):
-        self.text = self.font.render(text, 1, (WHITE))
+    def change_text(self, text, background= "white"):
+        self.text = self.font.render(text, 1, (BLACK))
         self.size = self.text.get_size()
         self.surface = pygame.Surface(self.size)
         self.surface.fill(background)
         self.surface.blit(self.text, (0, 0))
         self.rect = pygame.Rect(self.x, self.y, self.size[0], self.size[1])
  
-    def show(self):
-        screen.blit(button1.surface, (self.x, self.y))
-        # screen.blit(button2.surface, (self.x, self.y))
-        # screen.blit(button3.surface, (self.x, self.y))
-        # screen.blit(button4.surface, (self.x, self.y))
-        # screen.blit(button5.surface, (self.x, self.y))
-        # screen.blit(button6.surface, (self.x, self.y))
-        # screen.blit(button7.surface, (self.x, self.y))
-        # screen.blit(button8.surface, (self.x, self.y))
-        # screen.blit(button9.surface, (self.x, self.y))
-        # screen.blit(button10.surface, (self.x, self.y))
-        # screen.blit(button11.surface, (self.x, self.y))
-        # screen.blit(button12.surface, (self.x, self.y))
-        # screen.blit(button13.surface, (self.x, self.y))
-        # screen.blit(button14.surface, (self.x, self.y))
-        # screen.blit(button15.surface, (self.x, self.y))
-        # screen.blit(button16.surface, (self.x, self.y))
-        # screen.blit(button17.surface, (self.x, self.y))
-        # screen.blit(button18.surface, (self.x, self.y))
-        # screen.blit(button19.surface, (self.x, self.y))
-        # screen.blit(button20.surface, (self.x, self.y))
-        # screen.blit(button21.surface, (self.x, self.y))
-        # screen.blit(button22.surface, (self.x, self.y))
-        # screen.blit(button23.surface, (self.x, self.y))
-        # screen.blit(button24.surface, (self.x, self.y))
-        # screen.blit(button25.surface, (self.x, self.y))
-        # screen.blit(button26.surface, (self.x, self.y))
+
+    def show(self, button):
+        screen.blit(button.surface, (self.x, self.y))
  
     def click(self, event):
         x, y = pygame.mouse.get_pos()
@@ -99,35 +74,28 @@ class Button:
             if pygame.mouse.get_pressed()[0]:
                 if self.rect.collidepoint(x, y):
                     self.change_text(self.feedback, background="WHITE")
- 
- # instance of Button class
-button1 = Button("A",  (100, 400), font=50, background="black", feedback=" ")
-# button2 = Button("B",  (145, 400), font=50, background="black", feedback=" ")
-# button3 = Button("C",  (190, 400), font=50, background="black", feedback=" ")
-# button4 = Button("D",  (235, 400), font=50, background="black", feedback=" ")
-# button5 = Button("E",  (280, 400), font=50, background="black", feedback=" ")
-# button6 = Button("F",  (325, 400), font=50, background="black", feedback=" ")
-# button7 = Button("G",  (370, 400), font=50, background="black", feedback=" ")
-# button8 = Button("H",  (405, 400), font=50, background="black", feedback=" ")
-# button9 = Button("I",  (450, 400), font=50, background="black", feedback=" ")
-# button10 = Button("J",  (495, 400), font=50, background="black", feedback=" ")
-# button11 = Button("K",  (540, 400), font=50, background="black", feedback=" ")
-# button12 = Button("L",  (585, 400), font=50, background="black", feedback=" ")
-# button13 = Button("M",  (630, 400), font=50, background="black", feedback=" ")
-# button14 = Button("N",  (100, 500), font=50, background="black", feedback=" ")
-# button15 = Button("O",  (145, 500), font=50, background="black", feedback=" ")
-# button16 = Button("P",  (190, 500), font=50, background="black", feedback=" ")
-# button17 = Button("Q",  (235, 500), font=50, background="black", feedback=" ")
-# button18 = Button("R",  (280, 500), font=50, background="black", feedback=" ")
-# button19 = Button("S",  (325, 500), font=50, background="black", feedback=" ")
-# button20 = Button("T",  (370, 500), font=50, background="black", feedback=" ")
-# button21 = Button("U",  (405, 500), font=50, background="black", feedback=" ")
-# button22 = Button("V",  (450, 500), font=50, background="black", feedback=" ")
-# button23 = Button("W",  (495, 500), font=50, background="black", feedback=" ")
-# button24 = Button("X",  (540, 500), font=50, background="black", feedback=" ")
-# button25 = Button("Y",  (585, 500), font=50, background="black", feedback=" ")
-# button26 = Button("Z",  (630, 500), font=50, background="black", feedback=" ")
+                    found = False
+                    for c in word:
+                        if (c == self.char):
+                            print("FOUND")
+                            found = True
+                    if (not found):
+                        global game_status
+                        game_status += 1
 
+
+buttons = []
+
+curX = 100
+for i in range(0, 13):
+    buttons.append(Button(chr(65 + i), (curX, 400), font = 50))
+    curX = 100 + 45 * (i + 1)
+curX = 100
+for i in range (13, 26):
+    buttons.append(Button(chr(65 + i), (curX, 500), font = 50))
+    curX = 100 + 45 * (i - 12)
+
+words = []
 running = True
 
 # Game loop
@@ -146,11 +114,12 @@ while running:
         # quit game
         if event.type == pygame.QUIT:
             running = False
-        button1.click(event)
-    button1.show()
-    if event.type == pygame.QUIT:
-        button2.click(event)
-    button1.show
+        for button in buttons:
+            button.click(event)
+        
+    for button in buttons:
+        button.show(button)
+
 
     # updates the display
     pygame.display.update()
