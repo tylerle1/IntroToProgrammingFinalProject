@@ -1,22 +1,15 @@
 # IntroToProgrammingFinalProject
 # Hangman
 
-Make a fun hangman game 
+Make a hangman game using pygame
 
 ## Description
 
-A hangman game with random words. Guess letters and if you guess wrong you lose a life. Basically a normal hangman game. Use Bellarmine themed words. Use pygame
-to play hangman in a window
-
-## Getting Started
+A hangman game with different categories and random words. 
 
 ### Dependencies
 
 Python, pygame
-
-### Installing
-
-need pygame
 
 ### Executing program
 
@@ -29,14 +22,7 @@ code blocks for commands
 
 ## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
 ## Authors
-
-Contributors names and contact info
 
 Tyler Le
 tyler.le25@bcp.org
@@ -55,7 +41,4 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ## Acknowledgments
 
-Inspiration, code snippets, etc.
-* [w3Schools](https://www.w3schools.com/python/default.asp)
-* [PyGame](https://www.pygame.org/docs/)
-* [Automate The Boring Stuff](https://automatetheboringstuff.com/)
+
