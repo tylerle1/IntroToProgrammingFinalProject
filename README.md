@@ -12,16 +12,16 @@ to play hangman in a window
 
 ### Dependencies
 
-Python, tkinter
+Python, pygame
 
 ### Installing
 
-Run game in visual studio code
+need pygame
 
 ### Executing program
 
 Open python file and run
-Play in tkinter
+Play in pygame
 
 ```
 code blocks for commands
